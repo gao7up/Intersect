@@ -1,6 +1,10 @@
 package com.cangli.tech.intersect.internet;
 
 import android.app.DownloadManager;
+import android.app.Service;
+import android.content.Intent;
+import android.os.IBinder;
+import android.support.annotation.Nullable;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -12,9 +16,27 @@ import com.android.volley.toolbox.Volley;
 /**
  * Created by Alienware on 2016/8/10.
  */
-public class GetRequest {
+public class GetRequest extends Service {
+    @Nullable
+    @Override
+    public IBinder onBind(Intent intent) {
+        return null;
+    }
 
-//    public void gethttp(){
+
+    @Override
+    public void onCreate() {
+        super.onCreate();
+        System.out.println("ServiceOnCreate");
+    }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        System.out.println("ServiceOnDestory");
+    }
+
+    //    public void gethttp(){
 //        // Instantiate the RequestQueue.
 //        RequestQueue queue = Volley.newRequestQueue(this);
 //        String url ="http://www.google.com";

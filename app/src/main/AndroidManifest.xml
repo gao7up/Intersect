@@ -16,6 +16,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".activity.CharacterActivity"></activity>
+        <service android:name=".internet.GetRequest"></service>
     </application>
 
 </manifest>
